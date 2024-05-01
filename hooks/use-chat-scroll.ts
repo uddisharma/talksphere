@@ -33,6 +33,7 @@ export const useChatScroll = ({
     return () => {
       topDiv?.removeEventListener("scroll", handleScroll);
     }
+     // eslint-disable-next-line
   }, [shouldLoadMore, loadMore, chatRef]);
 
   useEffect(() => {
