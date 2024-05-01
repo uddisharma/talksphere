@@ -115,6 +115,7 @@ export const ChatItem = ({
     form.reset({
       content: content,
     })
+    // eslint-disable-next-line
   }, [content]);
 
   const fileType = fileUrl?.split(".").pop();
