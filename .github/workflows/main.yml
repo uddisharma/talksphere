@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # - name: Generate Prisma client
+      #   run: npx prisma generate
+
+      # - name: Apply Prisma migrations
+      #   run: npx prisma migrate deploy --preview-feature
+
       - name: Build application
         run: npm run build
 
@@ -29,13 +35,11 @@ jobs:
 
     needs: build
 
-    env:
-     DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
     steps:
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel_token: ${{ secrets.VERCEL_TOKEN }}
-          vercel_project_id: discord
-          vercel_scope: udit-sharmas-projects-c1c1f56a
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-project-id: discord
+        scope: udit-sharmas-projects-c1c1f56a
+
