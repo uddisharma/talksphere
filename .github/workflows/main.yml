@@ -35,6 +35,9 @@ jobs:
 
     needs: build
 
+    env:
+    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
     steps:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
