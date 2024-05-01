@@ -36,7 +36,7 @@ jobs:
     needs: build
 
     env:
-    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+     DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
       - name: Deploy to Vercel
